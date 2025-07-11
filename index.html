@@ -280,9 +280,11 @@
       <option value="Sound System">Kasi Kota</option>
       <option value="Lighting">Hot Dog</option>
       <option value="Lighting">Potato Chips</option>
+      <option value="Lighting">Burger</option>
+      <option value="Lighting">Russian & Chips</option>
+      <option value="Lighting">Drinks</option>
     </select>
     <input type="date" name="date" required>
-    <textarea name="message" rows="5" placeholder="Additional Details (venue, time, etc.)"></textarea>
     <button type="submit">Submit Order</button>
   </form>
 </section>
@@ -313,11 +315,11 @@
     emailjs.sendForm('9VpXJnpNdqLQR-uOe', 'template_jhessvb', this)  // Replace with your actual Service ID and Template ID
       .then(function(response) {
         console.log('Success:', response);
-        alert('Your booking has been submitted successfully! We will get in touch with you soon.');
+        alert('Your Order has been submitted successfully! We will get in touch with you soon.');
       })
       .catch(function(error) {
         console.log('Error:', error);
-        alert('Sorry, there was an issue submitting your booking. Please try again later.');
+        alert('Sorry, there was an issue submitting your Order. Please try again later.');
       });
   });
 </script>
