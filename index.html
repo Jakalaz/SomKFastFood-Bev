@@ -181,6 +181,32 @@
         font-size: 1.6em;
       }
     }
+     .zoom-container {
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 10px;
+    }
+
+    /* Initial fade-in when page loads */
+    .zoom-container img {
+      width: 100%;
+      opacity: 0;
+      transform: scale(1); /* No zoom initially */
+      transition: transform 0.5s ease-out, opacity 1s ease-out;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Zoom effect on hover */
+    .zoom-container img:hover {
+      transform: scale(1.2); /* Zoom to 120% on hover */
+    }
+
+    /* Fade-in keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+	  
   </style>
 </head>
 <body>
@@ -204,7 +230,7 @@
  <!-- Inside the Services Section -->
 <section id="services">
   <h3>Our Services</h3>
-  <div class="services">
+  <div class="zoom-container">
 	  
     <article class="service">
       <img src="assets/images/FullM.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
