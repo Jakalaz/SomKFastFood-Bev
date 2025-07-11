@@ -32,6 +32,9 @@
       align-items: center;
       justify-content: center;
       text-align: center;
+
+      /* Magic: gentle zoom + shift animation of the background */
+      animation: bgAnim 20s ease infinite alternate;
     }
 
     header::before {
@@ -196,7 +199,7 @@
       width: 100%;
       opacity: 0;
       transform: scale(1); /* No zoom initially */
-      transition: transform 0.5s ease-out, opacity 1s ease-out;
+      transition: transform 1s ease-out, opacity 1s ease-out;
       animation: fadeIn 1s forwards;
     }
 
