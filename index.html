@@ -34,7 +34,7 @@
       text-align: center;
 
       /* Magic: gentle zoom + shift animation of the background */
-      animation: bgAnim 20s ease infinite alternate;
+      animation: bgAnim 10s ease infinite alternate;
     }
 
     header::before {
@@ -229,7 +229,7 @@
 
 <nav>
   <a href="#services">Menu</a>
-  <a href="#booking">Place Order</a>
+  <a href="#Ordering">Place Order</a>
   <a href="#contact">Contact Us</a>
 </nav>
 
@@ -302,7 +302,7 @@
 </section>
 
    
-<section id="booking">
+<section id="Ordering">
   <h3>**Place an Order**</h3>
   <form id="booking-form">
     <input type="text" name="name" placeholder="Your Full Name" required>
@@ -334,7 +334,7 @@
 <script type="text/javascript">
   // Initialize EmailJS with your User ID (Replace with your actual user ID from EmailJS)
   (function () {
-    emailjs.init("9VpXJnpNdqLQR-uOe");  // Replace with your EmailJS user ID
+    emailjs.init("2D90Dl0QS7IfvW3tN");  // Replace with your EmailJS user ID
   })();
 
   // Handle the form submission
@@ -345,7 +345,7 @@
     var formData = new FormData(this);
 
     // Send email using EmailJS
-    emailjs.sendForm('9VpXJnpNdqLQR-uOe', 'template_jhessvb', this)  // Replace with your actual Service ID and Template ID
+    emailjs.sendForm('service_v4ktjuu', 'template_7olsneu', this)  // Replace with your actual Service ID and Template ID
       .then(function(response) {
         console.log('Success:', response);
         alert('Your Order has been submitted successfully! We will get in touch with you soon.');
