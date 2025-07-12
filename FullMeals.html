@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SomK's Fast Foods & Beverages</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      background: url('assets/FullMeals/FullM.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      /* Magic: gentle zoom + shift animation of the background */
+      animation: bgAnim 10s ease infinite alternate;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    header .header-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 3em;
+      font-weight: 600;
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      color: #ddd;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background: #222;
+      text-align: center;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e91e63;
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    section h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2em;
+      color: #111;
+    }
+
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .service {
+      flex: 1 1 300px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .service h4 {
+      margin-bottom: 10px;
+      color: #e91e63;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    form input:invalid {
+      border-color: #e91e63;
+    }
+
+    form button {
+      background: #e91e63;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      font-size: 1em;
+      cursor: pointer;
+      border-radius: 6px;
+      transition: all 0.3s;
+    }
+
+    form button:hover {
+      background: #c2185b;
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2em;
+      }
+      section {
+        padding: 40px 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav a {
+        font-size: 0.9em;
+        margin: 0 10px;
+      }
+
+      header h1 {
+        font-size: 1.6em;
+      }
+    }
+     .zoom-container {
+      overflow: hidden;
+      border-radius: 6px;
+      margin-bottom: 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    /* Initial fade-in when page loads */
+    .zoom-container img {
+      width: 100%;
+      opacity: 0;
+      transform: scale(1); /* No zoom initially */
+      transition: transform 1s ease-out, opacity 1s ease-out;
+      animation: fadeIn 1s forwards;
+    }
+
+    /* Zoom effect on hover */
+    .zoom-container img:hover {
+      transform: scale(1.2); /* Zoom to 120% on hover */
+    }
+
+    /* Fade-in keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+	  
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-content">
+    <h1>Full Meals</h1>
+    <p>"Best Made from Our Kitchen To Your Table"</p>
+	<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  </div>
+</header>
+
+<nav>
+  <a href="index.html">Main Menu</a>
+  <a href="Pizza.html">Pizza Menu</a>
+  <a href="Kota.html">Kota Menu</a>
+  <a href="Drinks.html">Beverages</a>
+  <a href="#contact">Contact Us</a>
+</nav>
+
+<main>
+ <!-- Inside the Services Section -->
+<section id="services">
+  <h3>Meals</h3>
+  <div class="zoom-container">
+	  
+    <article class="service">
+      <img src="assets/FullMeals/BeefStew.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Beef Stew With Rice</h4>
+      <p>Heartwarming meal where tender cubes of beef simmer in a savory, richly flavored sauce served over steamed rice. 
+	  Though recipes vary slightly across cuisines, the core elements remain consistent:</p>
+    </article>
+	
+	<article class="service">
+      <img src="assets/FullMeals/FriedR.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Fried Rice With Chicken</h4>
+      <p>Satisfying one‑pan meal that combines tender chicken, fluffy rice, crisp vegetables, and savory seasonings.</p>
+    </article>
+	
+	<article class="service">
+      <img src="assets/FullMeals/SpanishCStew.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Spanish Chicken Stew / Pollo Guisado</h4>
+      <p>One-pot dish featuring succulent chicken pieces braised in a rich, tomato-based sauce with vibrant Mediterranean flavors.</p>
+    </article>
+	
+	<article class="service">
+      <img src="assets/FullMeals/VegStew.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>Veg Stew</h4>
+      <p>Wholesome, flexible dish filled with nourishing ingredients—a perfect healthy comfort food.
+	  Consist of a thick, savory mix of seasonal vegetables simmered in a flavorful broth until tender—think carrots, potatoes, onions, celery, squash, beans, peas, mushrooms, 
+	  and sometimes lentils or beans
+	  </p>
+    </article>
+	
+	<article class="service">
+      <img src="assets/FullMeals/BritishBFast.jpg" alt="Sound System" style="width:100%; border-radius:6px; margin-bottom:10px;">
+      <h4>British Break-Fast</h4>
+      <p>hearty plate brimming with savory and comforting components</p>
+    </article>
+
+</div>
+</section>
+
+<!-- Footer with Social Links -->
+<footer id="contact">
+  <p>📞 Phone: <a href="tel:+26876907477" style="color: #ccc;">+268 76907477</a></p>
+  <p>📱 WhatsApp: <a href="https://wa.me/26876907477" target="_blank" style="color: #ccc;">Chat with us</a></p>
+  <p>📧 Email: <a href="mailto:sihlegumbi10111@gmail.com" style="color: #ccc;">sihlegumbi10111@gmail.com</a></p>
+  <p>&copy; 2025 SomK's Fast Foods & Beverages Eswatini. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
